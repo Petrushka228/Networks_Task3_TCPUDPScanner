@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace UDPTCPScaner
             {
                 CheckIfPortIsOpen(i);
             }
-            Console.WriteLine("Сканирование завершено...");
+            //rConsole.WriteLine("Сканирование завершено...");
 
         }
 
@@ -30,25 +31,19 @@ namespace UDPTCPScaner
         {
             Thread thread = new Thread(new ThreadStart(() =>
             {
+                Socket g_SvSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                var localAddress = new IPEndPoint(IPAddress.Any, port);
                 try
                 {
-                    var tcpClient = new TcpClient();
-                    tcpClient.Connect("127.0.0.1", port);
-                    Console.WriteLine("TCP порт " + port + " открыт");
+                    g_SvSocket.Bind(localAddress);
+                    g_SvSocket.Listen(4);
                 }
-                catch (SocketException)
+                catch (SocketException se)
                 {
-                    
-                }
-
-                try
-                {
-                    UdpClient udpClient = new UdpClient(port);
-                    Console.WriteLine("UDP порт " + port + " открыт");
-                    
-                }
-                catch (SocketException ex)
-                {
+                    if (se.SocketErrorCode == SocketError.AddressAlreadyInUse)
+                    {
+                        Console.WriteLine(localAddress.ToString() + " open");
+                    }
                     
                 }
             }));

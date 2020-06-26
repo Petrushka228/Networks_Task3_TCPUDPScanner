@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Artem\\Desktop\\UDPTCPScaner\\UDPTCPScaner\\UDPTCPScaner.csproj",
+      "projectUniqueName": "C:\\Users\\Artem\\Desktop\\Сети\\Networks_Task3_TCPUDPScanner\\UDPTCPScaner\\UDPTCPScaner\\UDPTCPScaner.csproj",
       "projectName": "UDPTCPScaner",
-      "projectPath": "C:\\Users\\Artem\\Desktop\\UDPTCPScaner\\UDPTCPScaner\\UDPTCPScaner.csproj",
+      "projectPath": "C:\\Users\\Artem\\Desktop\\Сети\\Networks_Task3_TCPUDPScanner\\UDPTCPScaner\\UDPTCPScaner\\UDPTCPScaner.csproj",
       "packagesPath": "C:\\Users\\Artem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Artem\\Desktop\\UDPTCPScaner\\UDPTCPScaner\\obj\\",
+      "outputPath": "C:\\Users\\Artem\\Desktop\\Сети\\Networks_Task3_TCPUDPScanner\\UDPTCPScaner\\UDPTCPScaner\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "G:\\Microsoft\\Xamarin\\NuGet\\"
